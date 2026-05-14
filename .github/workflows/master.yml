@@ -6,8 +6,12 @@ env:
   REGISTRY_USER: "enmasse+ci"
 
 on:
-  schedule:
-    - cron:  '0 */2 * * *'
+  push:
+    branches: [ master, main ]
+  # Commented out: scheduled build (temporarily disabled)
+  # Uncomment below to re-enable 2-hourly builds
+  # schedule:
+  #   - cron:  '0 */2 * * *'
 
 jobs:
   smoke:
