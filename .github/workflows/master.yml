@@ -4,6 +4,7 @@ env:
   DOCKER_ORG: enmasse
   KUBERNETES_NAMESPACE: "enmasse-infra"
   REGISTRY_USER: "enmasse+ci"
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 on:
   push:
@@ -91,6 +92,7 @@ jobs:
       - name: Upload artifacts
         if: failure()
         uses: actions/upload-artifact@v4
+        continue-on-error: true
         with:
           name: smoke-test-logs
           path: test-logs.zip
