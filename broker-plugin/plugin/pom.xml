@@ -59,7 +59,7 @@
               <goal>exec</goal>
             </goals>
             <configuration>
-              <workingDirectory>${project.basedir}/..</workingDirectory>
+              <workingDirectory>${maven.multiModuleProjectDirectory}</workingDirectory>
               <executable>go</executable>
               <environmentVariables>
                 <GO111MODULE>on</GO111MODULE>
@@ -68,7 +68,7 @@
                 <argument>build</argument>
                 <argument>-o</argument>
                 <argument>${project.basedir}/../build/broker-probe</argument>
-                <argument>${project.basedir}/../cmd/broker-probe</argument>
+                <argument>cmd/broker-probe</argument>
               </arguments>
             </configuration>
           </execution>
