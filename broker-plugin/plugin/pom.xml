@@ -68,7 +68,7 @@
                 <argument>build</argument>
                 <argument>-o</argument>
                 <argument>${project.basedir}/../build/broker-probe</argument>
-                <argument>cmd/broker-probe</argument>
+                <argument>${maven.multiModuleProjectDirectory}/cmd/broker-probe</argument>
               </arguments>
             </configuration>
           </execution>
