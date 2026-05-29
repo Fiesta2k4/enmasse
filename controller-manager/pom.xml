@@ -28,6 +28,35 @@
               </target>
             </configuration>
           </execution>
+          <execution>
+            <id>generate-operator-image-map</id>
+            <phase>generate-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <mkdir dir="${project.basedir}/build" />
+                <echo file="${project.basedir}/build/operatorImageMap.yaml">address-space-controller: ${ADDRESS_SPACE_CONTROLLER_IMAGE}
+controller-manager: ${CONTROLLER_MANAGER_IMAGE}
+router: ${ROUTER_IMAGE}
+none-authservice: ${NONE_AUTHSERVICE_IMAGE}
+keycloak: ${KEYCLOAK_IMAGE}
+keycloak-plugin: ${KEYCLOAK_PLUGIN_IMAGE}
+console-init: ${CONSOLE_INIT_IMAGE}
+console-server: ${CONSOLE_SERVER_IMAGE}
+console-proxy-openshift: ${CONSOLE_PROXY_OPENSHIFT_IMAGE}
+console-proxy-openshift3: ${CONSOLE_PROXY_OPENSHIFT3_IMAGE}
+console-proxy-kubernetes: ${CONSOLE_PROXY_KUBERNETES_IMAGE}
+standard-controller: ${STANDARD_CONTROLLER_IMAGE}
+agent: ${AGENT_IMAGE}
+broker: ${BROKER_IMAGE}
+broker-plugin: ${BROKER_PLUGIN_IMAGE}
+topic-forwarder: ${TOPIC_FORWARDER_IMAGE}
+</echo>
+              </target>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
